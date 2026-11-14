@@ -24,3 +24,8 @@
   Käyttäjä pystyy antamaan ohjelmalle kommentin ja arvostelun. Ohjelmasta näytetään kommentit ja keskimääräinen arvostelu.
 
 Tässä pääasiallinen tietokohde on saliohjelma ja toissijainen tietokohde on kommentti ohjelmaan.
+
+
+Linkkejä 
+
+https://google.github.io/styleguide/htmlcssguide.html
