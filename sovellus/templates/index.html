@@ -2,14 +2,61 @@
 <html>
 
 <head>
-  <title>Etusivu</title>
+  <title>Forumi</title>
 </head>
 
 <body>
-  <h1>Etusivu</h1>
+  {% if session.user_id %}
   <p>
-    <b>Tervetuloa</b> <i>sovellukseen</i>!
+    Olet kirjautunut nimellä {{ user_username }}
   </p>
+  <p>
+    <a href="/logout">Kirjaudu ulos</a>
+  </p>
+  {% else %}
+  <form action="/register" >
+    <input type="submit" value="Rekisteröidy" />
+  </form>
+  </p>
+  <form action="/login" >
+    <input type="submit" value="Kirjaudu" />
+</form>
+  {% endif %}
+  <p></p>
+
+<form action="/createprogram" method="get">
+    <input type="submit" value="Luo uusi ohjelma" />
+
+</form>
+<br />
+<hr />
+<form action="/search" method="get">
+    <p>
+      Hakusana:
+      {% if query %}
+      <input type="text" name="query" value="{{ query }}" />
+      {% else %}
+      <input type="text" name="query" />
+      {% endif %}
+    </p>
+    <input type="submit" value="Hae" />
+  </form>
+
+  <br />
+  <hr />
+
+  {% for thread in threads %}
+  <p>
+    <a href="/thread/{{ thread.id }}">{{ thread.title }}</a>
+    <br />
+    {{ thread.total }} kommenttia, uusin {{ thread.last }}
+  </p>
+  <hr />
+  {% endfor %}
+
+  
+
 </body>
 
 </html>
+

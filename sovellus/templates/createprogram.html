@@ -1,0 +1,15 @@
+{% if session.user_id %}
+    <h2>Uusi ohjelma</h2>
+
+  <form action="/new_thread" method="post">
+    <p>
+      Otsikko: <br />
+      <input type="text" name="title" />
+    </p>
+    <p>
+      Kommentti: <br />
+      <textarea name="content" rows="5" cols="40"></textarea>
+    </p>
+    <input type="submit" value="Lähetä" />
+  </form>
+  {% endif %}

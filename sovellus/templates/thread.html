@@ -1,0 +1,34 @@
+</p>
+<form action="/" >
+    <input type="submit" value="Takaisin pääsivulle" />
+</form>
+
+{% for message in messages %}
+  <p id="{{ message.id }}">
+    {{ message.username }} ({{ message.sent_at }}):
+  </p>
+  <p>
+    {{ message.content }}
+  </p>
+  {% if message.user_id == session.user_id %}
+  <p>
+    <a href="/edit/{{ message.id }}">Muokkaa</a> |
+    <a href="/remove/{{ message.id }}">Poista</a>
+  </p>
+  {% endif %}
+  <hr />
+  {% endfor %}
+
+  {% if session.user_id %}
+  <h2>Uusi kommentti</h2>
+
+  <form action="/new_message" method="post">
+    <p>
+      Kommentti:<br />
+      <textarea name="content" rows="5" cols="40"></textarea>
+    </p>
+    <input type="hidden" name="thread_id" value="{{ thread.id }}" />
+    <input type="submit" value="Lähetä" />
+  </form>
+  <hr />
+  {% endif %}
