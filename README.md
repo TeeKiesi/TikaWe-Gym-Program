@@ -1,5 +1,18 @@
 # TikaWe-Gym-Program
 
+Sovelluksen testaaminen (hävyttömästi ai:lta lainattu)
+
+  Asenna [uv](https://docs.astral.sh/uv/getting-started/installation/) [OhTu:n uv asennusohje](https://studies.cs.helsinki.fi/ohtu/uv#asennus) ja python 3.14 tai uudempi
+  
+  Käynnistä ohjelma juurihakemistosta
+  
+  ```
+  $ uv sync
+  $ uv run flask --app sovellus.app run
+  $ sqlite3 database.db < schema.sql
+  ```
+
+  Avaa selaimessa `http://127.0.0.1:5000`.
 
   Sovelluksessa käyttäjät pystyvät jakamaan saliohjelmia. Ohjelmassa on siihen tarvittavat päivät sekä päivien liikkeet.
   

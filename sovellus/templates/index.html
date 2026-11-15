@@ -13,6 +13,9 @@
   <p>
     <a href="/logout">Kirjaudu ulos</a>
   </p>
+  <form action="/createprogram" method="get">
+      <input type="submit" value="Luo uusi ohjelma" />
+</form>
   {% else %}
   <form action="/register" >
     <input type="submit" value="Rekisteröidy" />
@@ -20,12 +23,9 @@
   </p>
   <form action="/login" >
     <input type="submit" value="Kirjaudu" />
-</form>
+    <p></p>
   {% endif %}
-  <p></p>
 
-<form action="/createprogram" method="get">
-    <input type="submit" value="Luo uusi ohjelma" />
 
 </form>
 <br />
